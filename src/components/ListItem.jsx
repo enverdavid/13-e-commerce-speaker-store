@@ -4,11 +4,11 @@ const ListItem = ({ item }) => {
 
 
   return (
-    <div className="m-4  flex bg-white p-2">
+    <div className="m-4 p-5 flex bg-white p-2 rounded-lg">
       <img
         src={item.img}
         alt="Imagen del producto"
-        className="w-32 h-32 object-cover"
+        className="w-24 h-24 object-cover"
       />
       <div className="w-full flex flex-col justify-between">
         <p>{item.name}</p>
@@ -16,12 +16,12 @@ const ListItem = ({ item }) => {
           <p>US ${item.price}</p>
           <div>
             <button 
-              className="bg-gray-400 p-4"
+              className="text-white bg-gray-300 w-9 h-9 rounded-full"
             >
               -
             </button>
-            <span className="px-4">0</span>
-            <button className="bg-gray-400 p-4">+</button>
+            <span className="px-4">9</span>
+            <button className="text-white bg-purple-300 w-9 h-9 rounded-full">+</button>
           </div>
         </div>
       </div>

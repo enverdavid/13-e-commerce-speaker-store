@@ -1,8 +1,7 @@
 import { DataProvider } from "./context/DataContextMain";
 import { ShopCartProvider } from "./context/ShopCartContext";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Header } from "./components/Header";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { CardGrid } from "./components/CardGrid";
 import { CardList } from "./components/CardList";
 import { Checkout } from "./components/Checkout";

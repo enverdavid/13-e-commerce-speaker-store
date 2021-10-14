@@ -48,11 +48,22 @@ const decrementedArr = (state, id) => {
     return state.products.map((p) => p.id === id ? obj : p)
 }
 
+const incrementArr = (state, id) => {
+    const productToIncrementStock = state.products.find((p) => p.id === id);
+    const obj = {...productToIncrementStock};
+    obj.stock++
+    return state.products.map((p) => p.id === id ? obj : p);
+};
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "DECREASE_STOCK":
             return {
                 ...state, products: decrementedArr(state, action.payload)
+            }
+        case "INCREMENT_STOCK":
+            return {
+                ...state, products: incrementArr(state, action.payload)
             }
     
         default:

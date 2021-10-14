@@ -3,9 +3,10 @@ import { DataContextMain } from "../context/DataContextMain";
 import { ShopCartContext } from "../context/ShopCartContext";
 
 const CardItem = ({ id, name, desc, price, img }) => {
-
-  const { state: productState, dispatch: productDispatch } = useContext(DataContextMain);
-  const { state: cartState, dispatch: cartDispatch } = useContext(ShopCartContext);
+  const { state: productState, dispatch: productDispatch } =
+    useContext(DataContextMain);
+  const { state: cartState, dispatch: cartDispatch } =
+    useContext(ShopCartContext);
 
   const cartProduct = cartState.productsListCart.find((p) => p.id === id);
 
@@ -13,8 +14,8 @@ const CardItem = ({ id, name, desc, price, img }) => {
     // hay que disminuir el stock
     productDispatch({
       type: "DECREASE_STOCK",
-      payload: id
-    })
+      payload: id,
+    });
 
     cartDispatch({
       type: "ADD_PRODUCT_TO_CART",
@@ -29,13 +30,23 @@ const CardItem = ({ id, name, desc, price, img }) => {
     });
   };
 
-  const handlerRestItem = () => {
-    // Vamos a incrementar el stock de productos
-    
-
-    // Vamos a quitar una unidad de el item en el carrito de compras
+  const removeCartProduct = () => {
+    cartDispatch({type: "DELETE_PRODUCT_CART", payload: cartProduct });
 
   }
+
+  const handlerRestItem = () => {
+
+    if (cartProduct.units === 1) {
+      return removeCartProduct()
+    }
+
+    // Vamos a incrementar el stock de productos
+    productDispatch({type: "INCREMENT_STOCK", payload: id});
+
+    // Vamos a quitar una unidad del item en el carrito de compras
+    cartDispatch({type: "DECREMENT_CART_ITEM", payload: {id, price}});
+  };
 
   return (
     <div className="w-80 h-xxl bg-white rounded-lg m-3 flex flex-col justify-between overflow-hidden shadow-2xl">
@@ -44,12 +55,21 @@ const CardItem = ({ id, name, desc, price, img }) => {
       <div className="flex justify-end pr-5">
         <p>Price: ${price}</p>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center w-full">
         {cartProduct ? (
-          <div>
-            <button> - </button>
-            <span>{cartProduct.units}</span>
-            <button> + </button>
+          <div className="w-1/2 h-full flex justify-between items-center text-purple-600 bg-white">
+            <button 
+              className="ml-3 text-white bg-purple-600 w-10 h-10 rounded-full"
+              onClick={handlerRestItem}
+            >
+              -
+            </button>
+
+            <p className="w-1/3 font-bold	 text-center">{cartProduct.units}</p>
+
+            <button className="mr-3 text-white bg-purple-300 w-10 h-10 rounded-full">
+              +
+            </button>
           </div>
         ) : (
           <button
