@@ -9,6 +9,8 @@ const CardItem = ({ id, name, desc, price, img }) => {
     useContext(ShopCartContext);
 
   const cartProduct = cartState.productsListCart.find((p) => p.id === id);
+  const originalDataProduct = productState.products.find((p) => p.id === id);
+
 
   const handlerAddItemToCart = () => {
     // hay que disminuir el stock
@@ -31,6 +33,9 @@ const CardItem = ({ id, name, desc, price, img }) => {
   };
 
   const removeCartProduct = () => {
+    // Vamos a incrementar el stock de productos
+    productDispatch({type: "INCREMENT_STOCK", payload: id, numItems: cartProduct.units});
+
     cartDispatch({type: "DELETE_PRODUCT_CART", payload: cartProduct });
 
   }
@@ -42,11 +47,28 @@ const CardItem = ({ id, name, desc, price, img }) => {
     }
 
     // Vamos a incrementar el stock de productos
-    productDispatch({type: "INCREMENT_STOCK", payload: id});
+    productDispatch({type: "INCREMENT_STOCK", payload: id, numItems: 1});
 
     // Vamos a quitar una unidad del item en el carrito de compras
-    cartDispatch({type: "DECREMENT_CART_ITEM", payload: {id, price}});
+    cartDispatch({type: "DECREMENT_CART_ITEM_UNIT", payload: {id, price}});
   };
+
+  const handlerPlusItem = () => {
+
+    if (originalDataProduct.stock === 0) {
+      return
+    }
+
+    // Vamos a decrementar una unidad del stock de productos
+    productDispatch({
+      type: "DECREASE_STOCK",
+      payload: id,
+    });
+
+
+    // Vamos a añadir una unidad del item en el carrito de compras
+    cartDispatch({type: "ADD_CART_ITEM_UNIT", payload: {id, price}})
+  }
 
   return (
     <div className="w-80 h-xxl bg-white rounded-lg m-3 flex flex-col justify-between overflow-hidden shadow-2xl">
@@ -67,7 +89,10 @@ const CardItem = ({ id, name, desc, price, img }) => {
 
             <p className="w-1/3 font-bold	 text-center">{cartProduct.units}</p>
 
-            <button className="mr-3 text-white bg-purple-300 w-10 h-10 rounded-full">
+            <button 
+              className="mr-3 text-white bg-purple-300 w-10 h-10 rounded-full"
+              onClick={handlerPlusItem}
+              >
               +
             </button>
           </div>

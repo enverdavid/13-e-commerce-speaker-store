@@ -14,7 +14,7 @@ const Header = () => {
             <p>Logo</p>
             <p>{state.totalPrice}</p>
             <li>
-                  <Link to="/cart">Carrito</Link>
+                <Link to="/cart">Carrito</Link>
             </li>
 
         </div>
