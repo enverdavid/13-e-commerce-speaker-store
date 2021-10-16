@@ -11,7 +11,7 @@ function App() {
     <DataProvider>
       <ShopCartProvider>
         <Router>
-          <div className="bg-gray-300 min-h-full">
+          <div className="bg-gray-300 min-h-screen">
             <Switch>
               <Route path="/" exact>
                 <CardGrid />

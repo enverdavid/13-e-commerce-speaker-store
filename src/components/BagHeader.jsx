@@ -7,12 +7,10 @@ import {
 const BagHeader = () => {
   
   return (
-    <div className="bg-gray-800 text-white h-14 flex justify-between">
-      <li>
-        <Link to="/">back</Link>
-      </li>
-      <p>{`Cesta(${3})`}</p>
-      <p>Borrar</p>
+    <div className="mb-6 bg-gray-800 text-white h-14 flex items-center py-8">
+      
+        <Link to="/" className="p-4">{"< back"}</Link>
+    
     </div>
   );
 };

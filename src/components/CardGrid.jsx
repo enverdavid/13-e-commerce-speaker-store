@@ -11,7 +11,7 @@ const CardGrid = () => {
   return (
     <div >
       <Header />
-      <div className="ring-4 bg-gray-300 ring-indigo-300 flex justify-center flex-wrap">
+      <div className="m-4 bg-gray-300 flex justify-center flex-wrap">
         {state.products.map((product) => (
           <CardItem
             key={product.id}

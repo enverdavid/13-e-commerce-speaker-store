@@ -10,23 +10,28 @@ const CardList = () => {
   const { state } = useContext(ShopCartContext);
   const history = useHistory();
   // Undefined
-  console.log(state)
+  console.log(state);
 
   return (
-      <div className="w-full">
-        <BagHeader />
-        <div>
-          <p>Total price: ${state.totalPrice}</p>
-          <button 
-            className="bg-gray-300 p-3"
-            onClick={() => history.push("/checkout")}
-          >
-            Pagar
-          </button>
-        </div>
-        {state.productsListCart.map((el) => <ListItem key={el.id} item={el}/>)}
+    <div className="w-full">
+      <BagHeader />
+
+      {state.productsListCart.map((el) => (
+        <ListItem key={el.id} item={el} />
+      ))}
+
+      <p className="text-center text-2xl pt-5">Total price</p>
+      <p className="text-center text-purple-600 text-2xl font-bold">${state.totalPrice}</p>
+
+      <div className="flex justify-center">
+        <button
+          className="flex text-white bg-purple-600 px-10 py-5 m-9 rounded-lg text-2xl"
+          onClick={() => history.push("/checkout")}
+        >
+          Go to checkout
+        </button>
       </div>
-    
+    </div>
   );
 };
 

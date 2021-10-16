@@ -35,6 +35,46 @@ const initialState = {
             price: 250,
             stock: 20,
             img: "./products/lg.jpeg"
+        },
+        {
+            id: 5,
+            name: "lg04",
+            desc: "ddddddddd",
+            price: 250,
+            stock: 20,
+            img: "./products/lg.jpeg"
+        },
+        {
+            id: 6,
+            name: "lg04",
+            desc: "ddddddddd",
+            price: 250,
+            stock: 20,
+            img: "./products/lg.jpeg"
+        },
+        {
+            id: 7,
+            name: "lg04",
+            desc: "ddddddddd",
+            price: 250,
+            stock: 20,
+            img: "./products/lg.jpeg"
+        },
+        {
+            id: 8,
+            name: "lg04",
+            desc: "ddddddddd",
+            price: 250,
+            stock: 20,
+            img: "./products/lg.jpeg"
+        },
+        {
+            id: 9,
+            name: "lg04",
+            desc: "ddddddddd",
+            price: 250,
+            stock: 20,
+            img: "./products/lg.jpeg"
         }
     ]
 }
