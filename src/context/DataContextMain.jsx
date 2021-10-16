@@ -5,74 +5,74 @@ const DataContextMain = createContext();
 const initialState = {
     products: [
         {
-            id: 1,
-            name: "Sony X365",
-            desc: "aaaaaaa",
-            price: 150,
-            stock: 20,
-            img: "./products/lg.jpeg"
-        }, 
-        {
             id: 2,
-            name: "lg02",
+            name: "Apple Hompod mini",
             desc: "bbbbbbb",
-            price: 75,
-            stock: 20,
-            img: "./products/lg.jpeg"
-        }, 
-        {
-            id: 3,
-            name: "lg03",
-            desc: "cccccccc",
             price: 100,
             stock: 20,
-            img: "./products/lg.jpeg"
-        }, 
-        {
-            id: 4,
-            name: "lg04",
-            desc: "ddddddddd",
-            price: 250,
-            stock: 20,
-            img: "./products/lg.jpeg"
-        },
-        {
-            id: 5,
-            name: "lg04",
-            desc: "ddddddddd",
-            price: 250,
-            stock: 20,
-            img: "./products/lg.jpeg"
-        },
-        {
-            id: 6,
-            name: "lg04",
-            desc: "ddddddddd",
-            price: 250,
-            stock: 20,
-            img: "./products/lg.jpeg"
+            img: "./imagenes/hompod_mini.jpeg"
         },
         {
             id: 7,
-            name: "lg04",
+            name: "XBOOM Go PM5",
+            desc: "ddddddddd",
+            price: 125,
+            stock: 20,
+            img: "./imagenes/go_pm5.jpeg"
+        }, 
+        {
+            id: 3,
+            name: "Mi Smart Speaker",
+            desc: "cccccccc",
+            price: 45,
+            stock: 20,
+            img: "./imagenes/xiaomi.jpeg"
+        }, 
+        {
+            id: 4,
+            name: "JBL GO3",
+            desc: "ddddddddd",
+            price: 50,
+            stock: 20,
+            img: "./imagenes/jbl_go3.jpeg"
+        },
+        {
+            id: 5,
+            name: "Sony SRS-XG500",
             desc: "ddddddddd",
             price: 250,
             stock: 20,
-            img: "./products/lg.jpeg"
+            img: "./imagenes/Sony_SRS_XG500.jpeg"
+        },
+        {
+            id: 6,
+            name: "Amazon Echo Dot 4",
+            desc: "ddddddddd",
+            price: 50,
+            stock: 20,
+            img: "./imagenes/Amazon_Echo_Dot_4.jpeg"
         },
         {
             id: 8,
-            name: "lg04",
+            name: "JBL BOOMBOX2",
             desc: "ddddddddd",
             price: 250,
             stock: 20,
-            img: "./products/lg.jpeg"
+            img: "./imagenes/jbl_BOOMBOX2.jpeg"
         },
         {
             id: 9,
-            name: "lg04",
+            name: "Sony XB33",
             desc: "ddddddddd",
             price: 250,
+            stock: 20,
+            img: "./imagenes/sony_XB33.jpeg"
+        },
+        {
+            id: 1,
+            name: "LG XBOOM Go PL7W",
+            desc: "aaaaaaa",
+            price: 150,
             stock: 20,
             img: "./products/lg.jpeg"
         }
