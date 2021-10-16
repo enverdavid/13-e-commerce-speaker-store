@@ -7,8 +7,6 @@ const ListItem = ({ item }) => {
 
   const {
     cartProduct,
-    originalDataProduct,
-    handlerAddItemToCart,
     removeCartProduct,
     handlerRestItem,
     handlerPlusItem

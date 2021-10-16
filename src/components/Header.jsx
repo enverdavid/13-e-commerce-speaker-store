@@ -6,8 +6,6 @@ import { Icon } from "@iconify/react";
 const Header = () => {
   const { state } = useContext(ShopCartContext);
 
-  console.log(state);
-
   return (
     <div className="bg-gray-800 text-white h-14 flex justify-between items-center px-4 py-8">
       <Icon icon="bi:speaker-fill" className="text-2xl" />

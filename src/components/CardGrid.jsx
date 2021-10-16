@@ -6,8 +6,6 @@ import { Header } from "./Header";
 const CardGrid = () => {
   const { state } = useContext(DataContextMain);
 
-  console.log(state);
-
   return (
     <div >
       <Header />

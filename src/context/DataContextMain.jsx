@@ -64,7 +64,7 @@ const initialState = {
             id: 9,
             name: "Sony XB33",
             desc: "ddddddddd",
-            price: 250,
+            price: 120,
             stock: 20,
             img: "./imagenes/sony_XB33.jpeg"
         },
@@ -72,7 +72,7 @@ const initialState = {
             id: 1,
             name: "LG XBOOM Go PL7W",
             desc: "aaaaaaa",
-            price: 150,
+            price: 75,
             stock: 20,
             img: "./products/lg.jpeg"
         }

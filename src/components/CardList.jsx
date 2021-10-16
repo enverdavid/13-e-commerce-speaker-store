@@ -10,7 +10,6 @@ const CardList = () => {
   const { state } = useContext(ShopCartContext);
   const history = useHistory();
   // Undefined
-  console.log(state);
 
   return (
     <div className="w-full">
